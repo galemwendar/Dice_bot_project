@@ -10,7 +10,7 @@ const bot = new TelegramBot(token, { polling: true });
 bot.onText(/\/roll (\d+)d(\d+)/, (msg, match) => {
   const chatId = msg.chat.id;
   const numDice = parseInt(match[1], 10); // Number of dice
-  const numSides = parseInt(match[2], 10); // Number of sides
+  const numSides = parseInt(match[1].substring(1), 10); // Number of sides
 
   let result = '';
   let total = 0;
